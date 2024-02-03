@@ -1,0 +1,6 @@
+.scrollStyle {
+  scrollbar-width: none;
+}
+.active:active {
+  opacity: 10;
+}
