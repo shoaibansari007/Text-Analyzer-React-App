@@ -7,6 +7,7 @@ function Features({ text }) {
     const dot = /[.!?]/g;
     return text.match(dot) ? text.match(dot).length : 0;
   }
+
   return (
     <div className="flex flex-col flex-wrap w-full mt-4 sm:flex-row sm:flex-nowrap">
       <div className="w-full mb-4 text-center">
@@ -20,7 +21,9 @@ function Features({ text }) {
           Words
         </div>
         <div className="border border-blue-900">
-          {text.length === 0 ? 0 : text.split(" ").length}
+          {text.length === 0
+            ? 0
+            : text.split(/\s+/).filter((el) => el.length !== 0).length}
         </div>
       </div>
       <div className="w-full mb-4 text-center">

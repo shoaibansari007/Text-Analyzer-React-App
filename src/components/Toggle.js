@@ -2,13 +2,14 @@ import { Switch } from "@headlessui/react";
 
 function Toggle({ enabled, setEnabled }) {
   return (
-    <div className="absolute right-0 pr-4">
+    <div className="relative z-40 flex flex-row gap-2 pl-4 overflow-hidden text-blue-900 bg-white rounded-full before:w-28 before:h-8 before:bg-blue-300/80 before:rotate-45 before:absolute before:-z-30 before:top-2 before:right-3">
+      <p className="m-2 mr-0 ">Theme</p>
       <Switch
         checked={enabled}
         onChange={setEnabled}
         className={`${
           enabled ? "bg-blue-600" : "bg-gray-200"
-        } relative inline-flex h-6 w-11 items-center rounded-full `}
+        } relative inline-flex h-6 w-11 items-center rounded-full m-2 ml-0`}
       >
         <span
           className={`${

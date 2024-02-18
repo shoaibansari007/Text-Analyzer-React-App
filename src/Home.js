@@ -34,8 +34,10 @@ function Home({ enabled, setEnabled }) {
   };
   const handleCopy = () => {
     const text = document.getElementById("textArea");
-    navigator.clipboard.writeText(text.value);
-    showAlert("Copied to clipboard", "Success");
+    if (text.value.length !== 0) {
+      navigator.clipboard.writeText(text.value);
+      showAlert("Copied to clipboard", "Success");
+    }
   };
 
   return (
@@ -58,10 +60,22 @@ function Home({ enabled, setEnabled }) {
         />
         <div className="flex flex-col justify-between gap-4 sm:flex-row shrink-0">
           <div className="flex gap-4">
-            <Button text="Convert to Uppercase" onClick={handleUpperCase} />
-            <Button text="Convert to Lowercase" onClick={handleLowerCase} />
+            <Button
+              text="Convert to Uppercase"
+              onClick={handleUpperCase}
+              disabled={text.length === 0}
+            />
+            <Button
+              text="Convert to Lowercase"
+              onClick={handleLowerCase}
+              disabled={text.length === 0}
+            />
           </div>
-          <Button text="Clear" onClick={handleClear} />
+          <Button
+            text="Clear"
+            onClick={handleClear}
+            disabled={text.length === 0}
+          />
         </div>
         <Features text={text} />
       </div>
