@@ -2,8 +2,8 @@ import { Switch } from "@headlessui/react";
 
 function Toggle({ enabled, setEnabled }) {
   return (
-    <div className="relative z-40 flex flex-row gap-2 pl-4 overflow-hidden text-blue-900 bg-white rounded-full before:w-28 before:h-8 before:bg-blue-300/80 before:rotate-45 before:absolute before:-z-30 before:top-2 before:right-3">
-      <p className="m-2 mr-0 ">Theme</p>
+    <div className="relative z-40 flex flex-row gap-2 pl-4 overflow-hidden text-blue-900 rounded-full sm:bg-white before:w-28 before:h-8 sm:before:bg-blue-300/80 before:rotate-45 before:absolute before:-z-30 before:top-2 before:right-3">
+      <p className="hidden m-2 mr-0 sm:block">Theme</p>
       <Switch
         checked={enabled}
         onChange={setEnabled}
